@@ -1,0 +1,40 @@
+[
+    {
+        "From": "aaa@example.com",
+        "To": ["yyy@helloworld.com"],
+        "Subject": "A B I DONT BELONG HERE",
+        "Date":  "2018-04-26T13:51:50.417-07:00"
+    },
+    {
+        "From": "xyz@example.com",
+        "To": ["yherekljfslk@helloworld.com"],
+        "Subject": "Test email",
+        "Date":  "2019-04-26T13:51:50.417-07:00"
+    },
+    {
+        "From": "kdfjdk@example.com",
+        "To": ["wtf@helloworld.com", "yo@man.com"],
+        "Subject": "Wtf message",
+        "Date":  "2020-06-10T13:51:50.417-07:00"
+    },
+    {
+        "From": "aaa@example.com",
+        "To": ["yyy@helloworld.com", "hey@you.com", "Ikonw@you.com"],
+        "Subject": "B I DONT BELONG HERE",
+        "Date":  "2020-01-11T13:51:50.417-07:00",
+        "Attachment": true
+    },
+    {
+        "From": "aaa@example.com",
+        "To": ["yyy@helloworld.com"],
+        "Subject": "C I DONT BELONG HERE",
+        "Date":  "2019-04-26T13:51:50.417-07:00"
+    },
+    {
+        "From": "aba@example.com",
+        "To": ["yyy@helloworld.com"],
+        "Subject": "A Hey just wanted to check on you",
+        "Date":  "2019-01-26T13:51:50.417-07:00",
+        "Attachment": true
+    }
+]

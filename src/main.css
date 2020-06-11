@@ -1,0 +1,141 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #333;
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+.searchbar {
+  height: 4rem;
+  display: flex;
+}
+.searchbar__input {
+  height: 4rem;
+  border: 2px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  padding: 0 2rem 0 4rem;
+  border-right: none;
+}
+.searchbar__icon {
+  height: 4rem;
+  padding: 1rem;
+  position: absolute;
+}
+.searchbar__button {
+  height: 4rem;
+  padding: 1rem;
+  background-color: #f6f6f6;
+  border: 2px solid #ccc;
+  border-radius: 0 5px 5px 0;
+}
+
+.result {
+  padding: 2rem 0 1rem 0;
+  display: block;
+  break-before: always;
+  font-weight: bold;
+  color: #555;
+}
+.result__number {
+  font-size: 2rem;
+}
+
+.emails-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.emails-table__header {
+  width: 100%;
+  height: 4rem;
+  text-align: left;
+  background-color: #eee;
+  border-top: 2px solid #ccc;
+  border-bottom: 1px solid #777;
+  color: #555;
+}
+.emails-table__header th {
+  padding: 1rem 0;
+}
+.emails-table__data {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+.emails-table tbody tr:hover {
+  color: blue;
+  cursor: pointer;
+}
+.emails-table th, .emails-table td {
+  margin-left: 1rem;
+}
+.emails-table tr:nth-child(even) {
+  background-color: #eee;
+}
+.emails-table td:first-child, .emails-table th:first-child {
+  padding-left: 1rem;
+}
+.emails-table td:last-child, .emails-table th:last-child {
+  padding-right: 1rem;
+}
+.emails-table__tofield span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.emails-table__tofield span .extra-email-counter {
+  font-size: 0.7em;
+  font-weight: bold;
+  background-color: #777;
+  color: #f6f6f6;
+  padding: 0 0.4rem;
+  border-radius: 3px;
+  margin-right: 3rem;
+  align-items: center;
+}
+.emails-table__subject span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.emails-table__subject span img {
+  height: 1.5rem;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #f6f6f6;
+  margin-right: 3rem;
+}
+
+.sort-icon {
+  height: 0.7rem;
+  margin: 0, auto;
+  margin-bottom: 0.2rem;
+  margin-left: 1rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.container {
+  padding: 5rem;
+}
+
+/*# sourceMappingURL=main.css.map */
