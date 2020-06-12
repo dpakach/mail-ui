@@ -9,6 +9,7 @@ import Email from './components/Email';
 import data from "./files/emails.json"
 
 import FilterContext from './components/filterContext'
+import appLogo from "./files/logo.png"
 
 class App extends React.Component {
   constructor(props) {
@@ -41,21 +42,18 @@ class App extends React.Component {
   }
 
   sortEmails(emails) {
-    console.log("setting sort", this.state.sortBy, this.state.sortType)
     switch(this.state.sortBy) {
       case "Date":
         return emails.sort((a, b) => {
-          return this.state.sortBy === "Asc" ?
+          return this.state.sortType === "Asc" ?
            Date.parse(a["Date"]) - Date.parse(b["Date"]) :
            Date.parse(b["Date"]) - Date.parse(a["Date"])
         })
       default:
-        console.log("setting sort", this.state.sortBy, this.state.sortType)
         return emails.sort((a, b) => {
           let first, second
-          console.log(a[this.state.sortBy], b[this.state.sortBy])
 
-          if (this.state.sortBy === "Asc") {
+          if (this.state.sortType === "Asc") {
             first = a
             second = b
           } else {
@@ -117,14 +115,24 @@ class App extends React.Component {
     this.setEmails()
   } 
 
+  getMailListComponent() {
+    const emailsCount = this.state.emails.length
+    if (emailsCount === 0) {
+      return <div className="appLogo"><img src={appLogo} alt="Email Archiver"/></div>
+    } else {
+      return <MailList sortBy={this.state.sortBy} setSort={this.setSort} emails={this.sortEmails(this.state.emails)}/>
+    }
+  }
+
   render() {
     const {filter, sortBy, sortType} = this.state
     const {setFilter, setSort} = this
+    const emailsCount = this.state.emails.length
     return (
       <div className="container">
         <FilterContext.Provider value={{filter, setFilter, sortBy, sortType, setSort}}>
-          <SearchBar number={this.state.emails.length}/>
-          <MailList setSort={this.setSort} emails={this.sortEmails(this.state.emails)}/>
+          <SearchBar number={emailsCount}/>
+          {this.getMailListComponent()}
         </FilterContext.Provider>
       </div>
     );

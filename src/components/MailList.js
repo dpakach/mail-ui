@@ -3,14 +3,12 @@ import React from 'react';
 import EmailHeader from "./EmailHeader"
 import Email from "./Email"
 
-import data from "../files/emails.json"
-
 function MailList(props) {
   const emails = props.emails.map(element => {
-    return <Email email={element}/>  
+    return <Email sortBy={props.sortBy} email={element}/>  
   });
   return (
-    <table class="emails-table">
+    <table className={`emails-table sort-by__${props.sortBy.toLowerCase()}`}>
       <EmailHeader/>
       <tbody>
         {emails}
