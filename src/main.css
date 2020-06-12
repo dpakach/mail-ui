@@ -56,6 +56,7 @@ a {
   break-before: always;
   font-weight: bold;
   color: #555;
+  border-bottom: 1px solid #ccc;
 }
 .result__number {
   font-size: 2rem;
@@ -64,22 +65,55 @@ a {
 .emails-table {
   border-collapse: collapse;
   width: 100%;
+  table-layout: fixed;
 }
 .emails-table__header {
-  width: 100%;
   height: 4rem;
   text-align: left;
   background-color: #eee;
-  border-top: 2px solid #ccc;
   border-bottom: 1px solid #777;
   color: #555;
 }
 .emails-table__header th {
-  padding: 1rem 0;
+  margin: 1rem 0;
+  padding-right: 0.5rem;
+}
+.emails-table__header .sort-icon {
+  height: 0.7rem;
+  margin: 0, auto;
+  margin-bottom: 0.2rem;
+  margin-left: 1rem;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.emails-table__header .sort-icon--rev {
+  transform: rotate(180deg);
+}
+.emails-table__header .sort-icon--hidden {
+  display: none;
+}
+.emails-table th, .emails-table td {
+  overflow: hidden;
+}
+@media all and (max-width: 767px) {
+  .emails-table th {
+    display: inline-block;
+  }
+  .emails-table th:not(:last-child) {
+    border-right: 2px solid #777;
+  }
 }
 .emails-table__data {
   padding: 1rem 0;
+}
+.emails-table tr {
   border-bottom: 1px solid #ccc;
+}
+@media all and (max-width: 767px) {
+  .emails-table tr {
+    padding-bottom: 1rem;
+  }
 }
 .emails-table tbody tr:hover {
   color: blue;
@@ -124,18 +158,92 @@ a {
   color: #f6f6f6;
   margin-right: 3rem;
 }
-
-.sort-icon {
-  height: 0.7rem;
-  margin: 0, auto;
-  margin-bottom: 0.2rem;
+.emails-table__date img {
+  display: none;
+  margin-left: 0.5rem;
+  margin-bottom: 1px;
+  height: 1rem;
+}
+@media all and (max-width: 767px) {
+  .emails-table__date img {
+    display: inline-block;
+  }
+}
+.emails-table__icons {
+  display: none;
   margin-left: 1rem;
-  color: #555;
-  cursor: pointer;
+}
+.emails-table__icons img {
+  padding: 1rem 0.5rem 0 0.5rem;
+  height: 5rem;
+  font-weight: bold;
+  color: #f6f6f6;
+}
+.emails-table__row {
+  padding-left: 1rem;
+}
+@media all and (max-width: 767px) {
+  .emails-table {
+    padding: 0;
+  }
+  .emails-table__from {
+    font-weight: bold !important;
+    grid-area: from;
+    padding: 0;
+  }
+  .emails-table__tofield {
+    grid-area: to;
+    padding: 0;
+  }
+  .emails-table__subject {
+    grid-area: subject;
+    padding: 0;
+  }
+  .emails-table__date {
+    grid-area: date;
+    padding: 0;
+  }
+  .emails-table__icons {
+    display: inline-block;
+    grid-area: icons;
+    padding: 0;
+    grid-auto-columns: max-content;
+  }
+  .emails-table__attachment {
+    grid-area: attach;
+    padding: 0;
+  }
+  .emails-table__row {
+    display: grid;
+    grid-template-areas: "icons from date" "icons to to" "subject subject subject";
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+.sort-active {
+  font-weight: bold;
+}
+@media all and (max-width: 767px) {
+  .sort-active {
+    font-weight: normal;
+  }
 }
 
 .container {
   padding: 5rem;
+}
+@media all and (max-width: 767px) {
+  .container {
+    padding: 2rem;
+  }
+}
+
+.appLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 40rem;
 }
 
 /*# sourceMappingURL=main.css.map */

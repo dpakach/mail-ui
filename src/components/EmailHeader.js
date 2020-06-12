@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FilterContext from './filterContext';
 import sortIcon from '../files/icon_arrow01.svg'
 
 function MailList() {
 
-  const {setSort, sortType} = React.useContext(FilterContext)
+  const {setSort, sortType, sortBy} = React.useContext(FilterContext)
+
+  const [hovered, setHovered] = useState("")
 
   const getSort = (sort) => {
     return sort === "Asc" ? "Dec" : "Asc"
   }
 
+  const getHeader = (title) => {
+    return <th onMouseEnter={() => setHovered(title)} onMouseLeave={() => setHovered("")}> {title}
+      {title === sortBy ? 
+        <span onClick={() => setSort(title, getSort(sortType))}>
+          <img src={sortIcon} className={`sort-icon ${sortType === "Dec" ? "sort-icon--rev":""}`} alt={`sort by ${sortBy}`}/>
+        </span> :
+        <span onClick={() => setSort(title, getSort(sortType))}>
+          <img src={sortIcon} className={`sort-icon ${hovered === title ? "":"sort-icon--hidden"} ${sortType === "Dec" ? "sort-icon--rev":""}`} alt={`sort by ${sortBy}`} />
+        </span>
+      }
+      </th>
+  }
+
   return (
     <tr className="emails-table__header">
-        <th>From <a onClick={() => setSort("From", getSort(sortType))}><img src={sortIcon} class="sort-icon" /></a></th>
-        <th>To <a onClick={() => setSort("To", getSort(sortType))}><img src={sortIcon} class="sort-icon" /></a></th>
-        <th>Subject <a onClick={() => setSort("Subject", getSort(sortType))}><img src={sortIcon} class="sort-icon" /></a></th>
-        <th>Date <a onClick={() => setSort("Date", getSort(sortType))}><img src={sortIcon} class="sort-icon" /></a></th>
+        {getHeader("From")}
+        {getHeader("To")}
+        {getHeader("Subject")}
+        {getHeader("Date")}
     </tr>
   );
 }

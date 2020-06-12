@@ -11,17 +11,17 @@ class SearchBar extends React.Component {
       <div className="searchheader">
         <div className="searchbar">
             <input 
-            class="searchbar__input"
+            className="searchbar__input"
             type="text"
             value={filter}
             onChange={(e) => {
               setFilter(e.target.value)
             }}
             ></input>
-            <img class="searchbar__icon" src={calenderIcon}></img>
-            <img class="searchbar__button" src={searchButton} alt="search" />
+            <img className="searchbar__icon" src={calenderIcon} alt="select date"></img>
+            <img className="searchbar__button" src={searchButton} alt="search" />
         </div>
-        <span class="result" >Results: <span class="result__number">{this.props.number}</span> mail(s)</span>
+        <span className="result" >Results: <span className="result__number">{this.props.number}</span> mail(s)</span>
       </div>
     );
   }
