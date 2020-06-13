@@ -45,9 +45,9 @@ a {
   }
 }
 .container .detailpart {
-  height: 100vh;
+  height: 95vh;
   border-left: 1px solid #ccc;
-  overflow: scroll;
+  overflow: auto;
   width: 500px;
   transition: all 0.1s ease;
 }

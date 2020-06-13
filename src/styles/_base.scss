@@ -45,9 +45,9 @@ a {
     }
 
     .detailpart {
-      height: 100vh;
+      height: 95vh;
       border-left: 1px solid $color-grey-light-3;
-      overflow: scroll;
+      overflow: auto;
       width: 500px;
       transition: all .1s ease;
       @media all and (max-width: 1368px) {
