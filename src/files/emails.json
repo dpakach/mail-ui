@@ -20,7 +20,8 @@
         "From": "strange@example.com",
         "To": ["hello@helloworld.com", "yo@man.com"],
         "Subject": "Strange message",
-        "Date":  "2020-06-10T13:51:50.417-07:00"
+        "Date":  "2020-06-10T13:51:50.417-07:00",
+        "text": "Hey lorem,\n Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \n eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut \n enim ad minim veniam, quis nostrud exercitation ullamco laboris \n nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in \n reprehenderit in voluptate velit esse cillum dolore eu fugiat \n nulla pariatur. Excepteur sint occaecat cupidatat non proident, \n sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         "id": 4,
