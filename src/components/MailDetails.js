@@ -8,7 +8,6 @@ class MailDetails extends React.Component {
 
   constructor(props) {
       super(props)
-      console.log(this)
       this.state = {
         showFor: props.showFor
       }
@@ -18,8 +17,14 @@ class MailDetails extends React.Component {
       return {showFor: props.showFor}
   }
 
+  // Get the email object from given id
+  // Currently just reads from a json file
+  getEmail(id) {
+    return data.find(element => element.id === id)
+  }
+
   getDetails = () => {
-      return  this.state.showFor.map(id => <MailDetail key={id} mail={data.find(element => element.id === id)} hide={this.props.hideDetail} />)
+      return  this.state.showFor.map(id => <MailDetail key={id} mail={this.getEmail(id)} hide={this.props.hideDetail} />)
   }
 
   render() {
