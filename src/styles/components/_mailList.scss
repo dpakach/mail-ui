@@ -56,6 +56,15 @@
 
     tr {
         border-bottom: 1px solid $color-grey-light-3;
+
+        &:nth-child(even) {
+            background-color: $color-grey-light-2;
+        }
+
+        &:hover {
+            background-color: rgba($color-grey-dark-1, .1);
+        }
+
         @media all and (max-width: 767px) {
             padding-bottom: 1rem;
         }
@@ -70,10 +79,6 @@
 
     th, td {
         margin-left: 1rem;
-    }
-
-    tr:nth-child(even) {
-        background-color: $color-grey-light-2;
     }
 
     td:first-child, th:first-child {

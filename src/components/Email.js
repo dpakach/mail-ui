@@ -35,6 +35,7 @@ function Email(props) {
     }
   }
 
+  // Function to handle showing the details section in small screens
   const handleClick = () => {
     props.showDetail(email.id)
     props.showDetails()
