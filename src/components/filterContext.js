@@ -1,6 +1,7 @@
 import React from 'react';
 
-const FilterContext = React.createContext("some filter")
+// Filter context for setting the filter string for filtering the emails
+const FilterContext = React.createContext("")
 
 export default FilterContext
 

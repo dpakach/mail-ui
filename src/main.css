@@ -25,6 +25,15 @@ a {
   outline: none;
 }
 
+.container {
+  padding: 5rem;
+}
+@media all and (max-width: 767px) {
+  .container {
+    padding: 2rem;
+  }
+}
+
 .searchbar {
   height: 4rem;
   display: flex;
@@ -226,15 +235,6 @@ a {
 @media all and (max-width: 767px) {
   .sort-active {
     font-weight: normal;
-  }
-}
-
-.container {
-  padding: 5rem;
-}
-@media all and (max-width: 767px) {
-  .container {
-    padding: 2rem;
   }
 }
 
