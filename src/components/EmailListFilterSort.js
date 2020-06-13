@@ -1,13 +1,13 @@
 import React from 'react';
-import MailList from './components/MailList';
-import SearchBar from './components/SearchBar'
+import MailList from './MailList';
+import SearchBar from './SearchBar'
 
-import data from "./files/emails.json"
+import data from "../files/emails.json"
 
-import FilterContext from './components/filterContext'
-import appLogo from "./files/logo.png"
+import FilterContext from './filterContext'
+import appLogo from "../files/logo.png"
 
-import {SORT_TYPES, FIELDS} from "./utils/consts"
+import {SORT_TYPES, FIELDS} from "../utils/consts"
 
 /**
  * Email List component with filter and sort
@@ -140,7 +140,6 @@ class EmailListFilterSort extends React.Component {
     const {filter, sortBy, sortType} = this.state
     const {setFilter, setSort} = this
     const emailsCount = this.state.emails.length
-    console.log(setFilter)
     return (
       <FilterContext.Provider value={{filter, setFilter, sortBy, sortType, setSort, emailsCount}}>
         <SearchBar/>

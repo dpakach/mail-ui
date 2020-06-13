@@ -3,7 +3,7 @@ import React from 'react';
 //import './App.css';
 import './main.css';
 
-import EmailListFilterSort from './EmailListFilterSort'
+import EmailListFilterSort from './components/EmailListFilterSort'
 
 // The main App Components
 class App extends React.Component {
