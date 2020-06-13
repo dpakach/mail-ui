@@ -1,0 +1,39 @@
+.searchbar {
+    height: 4rem;
+    display: flex;
+
+    &__input {
+        height: 4rem;
+        border: 2px solid $color-grey-light-3;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        padding: 0 2rem 0 4rem;
+        border-right: none;
+    }
+
+    &__icon {
+        height: 4rem;
+        padding: 1rem;
+        position: absolute;
+    }
+
+    &__button {
+        height: 4rem;
+        padding: 1rem;
+        background-color: $color-grey-light-1;
+        border: 2px solid $color-grey-light-3;
+        border-radius: 0 5px 5px 0;
+    }
+}
+
+.result {
+    padding: 2rem 0 1rem 0;
+    display: block;
+    break-before: always;
+    font-weight: bold;
+    color: $color-grey-dark-2;
+    border-bottom: 1px solid $color-grey-light-3;
+    &__number {
+        font-size: 2rem;
+    }
+}

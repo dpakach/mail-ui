@@ -2,23 +2,26 @@ import React, { useState } from 'react';
 import FilterContext from './filterContext';
 import sortIcon from '../files/icon_arrow01.svg'
 
-function MailList() {
+// EmailHeader is the table header for the emails
+function EmailHeader() {
 
   const {setSort, sortType, sortBy} = React.useContext(FilterContext)
 
   const [hovered, setHovered] = useState("")
 
-  const getSort = (sort) => {
+  // Get the new sort type after toggle
+  const getSortChanged = (sort) => {
     return sort === "Asc" ? "Dec" : "Asc"
   }
 
+  // Get the table header for cach field
   const getHeader = (title) => {
     return <th onMouseEnter={() => setHovered(title)} onMouseLeave={() => setHovered("")}> {title}
       {title === sortBy ? 
-        <span onClick={() => setSort(title, getSort(sortType))}>
+        <span onClick={() => setSort(title, getSortChanged(sortType))}>
           <img src={sortIcon} className={`sort-icon ${sortType === "Dec" ? "sort-icon--rev":""}`} alt={`sort by ${sortBy}`}/>
         </span> :
-        <span onClick={() => setSort(title, getSort(sortType))}>
+        <span onClick={() => setSort(title, getSortChanged(sortType))}>
           <img src={sortIcon} className={`sort-icon ${hovered === title ? "":"sort-icon--hidden"} ${sortType === "Dec" ? "sort-icon--rev":""}`} alt={`sort by ${sortBy}`} />
         </span>
       }
@@ -35,4 +38,4 @@ function MailList() {
   );
 }
 
-export default MailList;
+export default EmailHeader;

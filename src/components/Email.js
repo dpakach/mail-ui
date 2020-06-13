@@ -1,12 +1,24 @@
 import React from 'react';
 
-import attachmentIcon from "../files/icon_clip.svg"
 import arrowIcon from "../files/icon_arrow02.svg"
+import attachmentIcon from "../files/icon_clip.svg"
 import mailIcon from "../files/icon_mail_sp.svg"
 
+// The email row in the Mail List
 function Email(props) {
+  // Get the email object from the props
   const {email} = props
 
+  /**
+   * format the date based on time since the email
+   * 
+   * if it is on current date use time
+   *    eg. 1:20
+   * if the year is same use month and date
+   *    eg. Jan 14
+   * otherwise full format
+   *    eg 1/27/2018
+   */
   const date = () => {
     const dateObj = new Date(Date.parse(email.Date))
     const today = new Date()
@@ -21,6 +33,7 @@ function Email(props) {
     return `${dateObj.getHours()}:${dateObj.getMinutes()}`
   }
 
+  // Get the to field of the email
   const to = () => {
     if (email.To.length > 1) {
       return <span>
@@ -32,6 +45,7 @@ function Email(props) {
     }
   }
 
+  // Get the subject field of the email
   const subject = () => {
     if (email.Attachment) {
       return <span>
