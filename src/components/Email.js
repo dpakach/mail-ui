@@ -16,7 +16,7 @@ function Email(props) {
     if (email.To.length > 1) {
       return <span>
           <span>{email.To[0]}, ...</span>
-          <span class="extra-email-counter">+{email.To.length - 1}</span>
+          <span className="extra-email-counter">+{email.To.length - 1}</span>
         </span>
     } else {
       return <span>{email.To[0]}</span>
