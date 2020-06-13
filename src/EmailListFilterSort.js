@@ -7,6 +7,8 @@ import data from "./files/emails.json"
 import FilterContext from './components/filterContext'
 import appLogo from "./files/logo.png"
 
+import {SORT_TYPES, FIELDS} from "./utils/consts"
+
 /**
  * Email List component with filter and sort
  * 
@@ -21,8 +23,8 @@ class EmailListFilterSort extends React.Component {
     this.state = {
       filter: "",
       emails: [],
-      sortBy: "Date",
-      sortType: "Asc"
+      sortBy: FIELDS.Date,
+      sortType: SORT_TYPES.Descending
     }
     this.setFilter = this.setFilter.bind(this)
     this.setSort = this.setSort.bind(this)
@@ -52,18 +54,18 @@ class EmailListFilterSort extends React.Component {
   // Sort the emails based on method specified in the state
   sortEmails(emails) {
     // if sortby is date sort by date
-    if (this.state.sortBy === "Date") {
+    if (this.state.sortBy === FIELDS.Date) {
       return emails.sort((a, b) => {
-        return this.state.sortType === "Asc" ?
-          Date.parse(a["Date"]) - Date.parse(b["Date"]) :
-          Date.parse(b["Date"]) - Date.parse(a["Date"])
+        return this.state.sortType === SORT_TYPES.Ascending ?
+          Date.parse(a[FIELDS.Date]) - Date.parse(b[FIELDS.Date]) :
+          Date.parse(b[FIELDS.Date]) - Date.parse(a[FIELDS.Date])
       })
     }
     // sort alphebatically
     return emails.sort((a, b) => {
       let first, second
 
-      if (this.state.sortType === "Asc") {
+      if (this.state.sortType === SORT_TYPES.Ascending) {
         first = a
         second = b
       } else {
@@ -108,7 +110,7 @@ class EmailListFilterSort extends React.Component {
         return this.getEmails()
       }
       return this.getEmails().filter(email => {
-        const date = new Date(email["Date"])
+        const date = new Date(email[FIELDS.Date])
         return filterDateStart < date && date < filterDateEnd
       })
     }
