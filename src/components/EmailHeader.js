@@ -5,7 +5,7 @@ import sortIcon from '../files/icon_arrow01.svg'
 import {FIELDS, SORT_TYPES} from "../utils/consts"
 
 // EmailHeader is the table header for the emails
-function EmailHeader() {
+function EmailHeader(props) {
 
   const {setSort, sortType, sortBy} = React.useContext(FilterContext)
 
@@ -18,7 +18,7 @@ function EmailHeader() {
 
   // Get the table header for cach field
   const getHeader = (title) => {
-    return <th onMouseEnter={() => setHovered(title)} onMouseLeave={() => setHovered("")}> {title}
+    return <th onClick={() => setSort(title, getSortChanged(sortType))} onMouseEnter={() => setHovered(title)} onMouseLeave={() => setHovered("")}> {title}
       {title === sortBy ? 
         <span onClick={() => setSort(title, getSortChanged(sortType))}>
           <img src={sortIcon} className={`sort-icon ${sortType === SORT_TYPES.Descending ? "sort-icon--rev":""}`} alt={`sort by ${sortBy}`}/>
@@ -36,6 +36,11 @@ function EmailHeader() {
         {getHeader(FIELDS.To)}
         {getHeader(FIELDS.Subject)}
         {getHeader(FIELDS.Date)}
+        {
+          props.showDetailsButton ? 
+          <button className="btn hide-on-big btn--header" onClick={props.showDetails}>Go to details</button> :
+          <></>
+        }
     </tr>
   );
 }

@@ -26,8 +26,97 @@ a {
 }
 
 .container {
-    padding: 5rem;
     @media all and (max-width: 767px) {
-        padding: 2rem;
+        padding: 1rem;
     }
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 2rem;
+
+    .listpart {
+      overflow: hidden;
+      padding: 0;
+
+      &--hidden {
+        @media all and (max-width: 767px) {
+          display: none;
+        }
+      }
+    }
+
+    .detailpart {
+      height: 100vh;
+      border-left: 1px solid $color-grey-light-3;
+      overflow: scroll;
+      width: 500px;
+      transition: all .1s ease;
+      @media all and (max-width: 1368px) {
+          padding: 1rem;
+          width: 300px;
+      }
+
+      @media all and (max-width: 768px) {
+          padding: 1rem;
+          width: 100%;
+      }
+
+      &--hidden {
+        display: none;
+      }
+    }
+}
+
+.maildetail {
+  padding: 1rem;
+  border-bottom: 2px solid $color-grey-light-3;
+  padding-bottom: 2rem;
+  overflow: hidden;
+
+
+  &__header {
+    border-bottom: 1px solid $color-grey-light-3;
+    padding: 0 1rem;
+  }
+  span {
+    display: block;
+  }
+
+  &__subject {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  p {
+    padding-top: 1rem;
+  }
+}
+
+.hide-on-big {
+  display: none;
+  @media all and (max-width: 767px) {
+    display: inline-block;
+  }
+}
+
+.btn {
+  &:focus {
+    border: none;
+    outline: none;
+  }
+  font-size: 1.5rem;;
+  border: none;
+  background-color: $color-grey-dark-3;
+  padding: .5rem;
+  color: white;
+  border-radius: 2px;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color-grey-dark-3, .7);
+  }
+
+  &--header {
+    margin-left: 1rem;
+  }
 }
