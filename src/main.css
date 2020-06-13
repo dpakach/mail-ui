@@ -207,6 +207,12 @@ a {
 .emails-table tr {
   border-bottom: 1px solid #ccc;
 }
+.emails-table tr:nth-child(even) {
+  background-color: #eee;
+}
+.emails-table tr:hover {
+  background-color: rgba(51, 51, 51, 0.1);
+}
 @media all and (max-width: 767px) {
   .emails-table tr {
     padding-bottom: 1rem;
@@ -218,9 +224,6 @@ a {
 }
 .emails-table th, .emails-table td {
   margin-left: 1rem;
-}
-.emails-table tr:nth-child(even) {
-  background-color: #eee;
 }
 .emails-table td:first-child, .emails-table th:first-child {
   padding-left: 1rem;

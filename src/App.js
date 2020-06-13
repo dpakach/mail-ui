@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      details: [1, 4],
+      details: [],
       showDetails: false,
       showList: true
     }
