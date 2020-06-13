@@ -3,6 +3,7 @@ import React from 'react';
 import arrowIcon from "../files/icon_arrow02.svg"
 import attachmentIcon from "../files/icon_clip.svg"
 import mailIcon from "../files/icon_mail_sp.svg"
+import { FIELDS } from '../utils/consts';
 
 // The email row in the Mail List
 function Email(props) {
@@ -62,16 +63,16 @@ function Email(props) {
       <div className="emails-table__icons">
         <img src={mailIcon} alt=""/>
       </div>
-      <td className={`emails-table__data emails-table__from ${props.sortBy === "From" ? "sort-active":""}`}>
+      <td className={`emails-table__data emails-table__from ${props.sortBy === FIELDS.From ? "sort-active":""}`}>
         {email.From}
       </td>
-      <td className={`emails-table__data emails-table__tofield ${props.sortBy === "To" ? "sort-active":""}`}>
+      <td className={`emails-table__data emails-table__tofield ${props.sortBy === FIELDS.To ? "sort-active":""}`}>
         {to()}
       </td>
-      <td className={`emails-table__data emails-table__subject ${props.sortBy === "Subject" ? "sort-active":""}`}>
+      <td className={`emails-table__data emails-table__subject ${props.sortBy === FIELDS.Subject ? "sort-active":""}`}>
         {subject()}
       </td>
-      <td className={`emails-table__data emails-table__date ${props.sortBy === "Date" ? "sort-active":""}`}>
+      <td className={`emails-table__data emails-table__date ${props.sortBy === FIELDS.Date ? "sort-active":""}`}>
         {date()}
         <img className="emails-table__arrow" src={arrowIcon} alt=""/>
       </td>
