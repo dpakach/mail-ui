@@ -1,40 +1,51 @@
 [
     {
+        "id": 1,
         "From": "aaa@example.com",
         "To": ["yyy@helloworld.com"],
-        "Subject": "A B I DONT BELONG HERE",
-        "Date":  "2018-04-26T13:51:50.417-07:00"
+        "Subject": "Just sending a test email",
+        "Date":  "2018-04-26T13:51:50.417-07:00",
+        "text": "Hello, how are you"
     },
     {
+        "id": 2,
         "From": "xyz@example.com",
-        "To": ["yherekljfslk@helloworld.com"],
+        "To": ["hey@helloworld.com"],
         "Subject": "Test email",
-        "Date":  "2019-04-26T13:51:50.417-07:00"
+        "Date":  "2019-04-26T13:51:50.417-07:00",
+        "text": "I'm doing preety good"
     },
     {
-        "From": "kdfjdk@example.com",
-        "To": ["wtf@helloworld.com", "yo@man.com"],
-        "Subject": "Wtf message",
+        "id": 3,
+        "From": "strange@example.com",
+        "To": ["hello@helloworld.com", "yo@man.com"],
+        "Subject": "Strange message",
         "Date":  "2020-06-10T13:51:50.417-07:00"
     },
     {
+        "id": 4,
         "From": "aaa@example.com",
-        "To": ["yyy@helloworld.com", "hey@you.com", "Ikonw@you.com"],
-        "Subject": "B I DONT BELONG HERE",
+        "To": ["yyy@helloworld.com", "hey@you.com", "friend@you.com"],
+        "Subject": "日本語のメッセージ",
         "Date":  "2020-01-11T13:51:50.417-07:00",
-        "Attachment": true
+        "Attachment": true,
+        "text": "これは単なる日本語のテストメッセージです。"
     },
     {
+        "id": 5,
         "From": "aaa@example.com",
         "To": ["yyy@helloworld.com"],
-        "Subject": "C I DONT BELONG HERE",
-        "Date":  "2019-04-26T13:51:50.417-07:00"
+        "Subject": "A new message",
+        "Date":  "2019-04-26T13:51:50.417-07:00",
+        "text": "This is just a test message in english"
     },
     {
+        "id": 6,
         "From": "aba@example.com",
-        "To": ["yyy@helloworld.com"],
-        "Subject": "A Hey just wanted to check on you",
+        "To": ["nepali@helloworld.com"],
+        "Subject": "नेपाली सन्देश",
         "Date":  "2019-01-26T13:51:50.417-07:00",
-        "Attachment": true
+        "Attachment": true,
+        "text": "यो नेपालीमा मात्र एक परीक्षण सन्देश हो।"
     }
 ]

@@ -131,7 +131,14 @@ class EmailListFilterSort extends React.Component {
     if (emailsCount === 0) {
       return <div className="appLogo"><img src={appLogo} alt="Email Archiver"/></div>
     } else {
-      return <MailList sortBy={this.state.sortBy} setSort={this.setSort} emails={this.sortEmails(this.state.emails)}/>
+      return <MailList 
+              sortBy={this.state.sortBy} 
+              setSort={this.setSort} 
+              emails={this.sortEmails(this.state.emails)} 
+              showDetail={this.props.showDetail} 
+              showDetails={this.props.showDetails} 
+              showDetailsButton={this.props.showDetailsButton}
+             />
     }
   }
 
