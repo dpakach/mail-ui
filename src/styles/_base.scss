@@ -89,6 +89,8 @@ a {
   p {
     padding-top: 1rem;
   }
+  border-radius: 3px;
+  animation: highlight 2000ms ease-out;
 }
 
 .hide-on-big {
@@ -118,5 +120,14 @@ a {
 
   &--header {
     margin-left: 1rem;
+  }
+}
+
+@keyframes highlight {
+  0% {
+    background-color: rgba($color-grey-light-3, .7);
+  }
+  100% {
+    background-color: rgba($color-grey-light-3, 0);
   }
 }

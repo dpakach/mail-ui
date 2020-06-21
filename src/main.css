@@ -72,6 +72,8 @@ a {
   border-bottom: 2px solid #ccc;
   padding-bottom: 2rem;
   overflow: hidden;
+  border-radius: 3px;
+  animation: highlight 2000ms ease-out;
 }
 .maildetail__header {
   border-bottom: 1px solid #ccc;
@@ -118,6 +120,14 @@ a {
   margin-left: 1rem;
 }
 
+@keyframes highlight {
+  0% {
+    background-color: rgba(204, 204, 204, 0.7);
+  }
+  100% {
+    background-color: rgba(204, 204, 204, 0);
+  }
+}
 .searchbar {
   height: 4rem;
   display: flex;
@@ -190,8 +200,31 @@ a {
 .emails-table__header .sort-icon--hidden {
   display: none;
 }
+.emails-table__header__From {
+  width: 250px;
+}
+@media all and (max-width: 1080px) {
+  .emails-table__header__From {
+    width: 175px;
+  }
+}
+@media all and (max-width: 767px) {
+  .emails-table__header__From {
+    width: auto;
+  }
+}
+.emails-table__header__Date {
+  width: 100px;
+}
+@media all and (max-width: 767px) {
+  .emails-table__header__Date {
+    width: auto;
+  }
+}
 .emails-table th, .emails-table td {
   overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media all and (max-width: 767px) {
   .emails-table th {
@@ -230,6 +263,14 @@ a {
 }
 .emails-table td:last-child, .emails-table th:last-child {
   padding-right: 1rem;
+}
+.emails-table__from {
+  padding-left: 1rem;
+}
+@media all and (max-width: 767px) {
+  .emails-table__from {
+    padding-left: auto;
+  }
 }
 .emails-table__tofield span {
   display: flex;
@@ -271,7 +312,6 @@ a {
 }
 .emails-table__icons {
   display: none;
-  margin-left: 1rem;
 }
 .emails-table__icons img {
   padding: 1rem 0.5rem 0 0.5rem;

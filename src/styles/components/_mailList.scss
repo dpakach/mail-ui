@@ -8,7 +8,7 @@
     table-layout: fixed;
     &__header {
         height: 4rem;
-        text-align: left;        
+        text-align: left;
         background-color: $color-grey-light-2;
         border-bottom: 1px solid $color-grey-dark-3;
         color: $color-grey-dark-2;
@@ -35,9 +35,28 @@
                 display: none;
             }
         }
+
+        &__From {
+            width: 250px;
+            @media all and (max-width: 1080px) {
+                width: 175px
+            }
+            @media all and (max-width: 767px) {
+                width: auto
+            }
+        }
+
+        &__Date {
+            width: 100px;
+            @media all and (max-width: 767px) {
+                width: auto
+            }
+        }
     }
     th,td {
         overflow: hidden;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     @media all and (max-width: 767px) {
@@ -89,6 +108,13 @@
         padding-right: 1rem;;
     }
 
+    &__from {
+        padding-left: 1rem;
+        @media all and (max-width: 767px) {
+            padding-left: auto;
+        }
+    }
+
     &__tofield span {
         display: flex;
         justify-content: space-between;
@@ -134,7 +160,6 @@
 
     &__icons {
         display: none;
-        margin-left: 1rem;
         img {
             padding: 1rem .5rem 0 .5rem;
             height: 5rem;

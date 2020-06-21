@@ -18,7 +18,7 @@ function EmailHeader(props) {
 
   // Get the table header for cach field
   const getHeader = (title) => {
-    return <th onClick={() => setSort(title, getSortChanged(sortType))} onMouseEnter={() => setHovered(title)} onMouseLeave={() => setHovered("")}> {title}
+    return <th className={`emails-table__header__${title}`} onClick={() => setSort(title, getSortChanged(sortType))} onMouseEnter={() => setHovered(title)} onMouseLeave={() => setHovered("")}> {title}
       {title === sortBy ? 
         <span onClick={() => setSort(title, getSortChanged(sortType))}>
           <img src={sortIcon} className={`sort-icon ${sortType === SORT_TYPES.Descending ? "sort-icon--rev":""}`} alt={`sort by ${sortBy}`}/>

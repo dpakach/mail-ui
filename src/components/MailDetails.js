@@ -17,6 +17,11 @@ class MailDetails extends React.Component {
       return {showFor: props.showFor}
   }
 
+  componentDidUpdate() {
+    var element = document.querySelector('.detailpart');
+    element.scrollTop = element.scrollHeight;
+  }
+
   // Get the email object from given id
   // Currently just reads from a json file
   getEmail(id) {
